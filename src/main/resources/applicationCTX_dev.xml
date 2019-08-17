@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	profile="dev">
+	
+	
+
+	<bean id="serverInfo" class="com.javalec.profile.ServerInfo">
+	
+		<!-- 
+		The values are an external resource as far as it is not a java file.
+		However, they are directly assigned in this xml which means they could not literal external resources. -->	
+		<property name="ip" value="localhost"/>
+		<property name="port" value="8181"/>
+			 
+	</bean>
+</beans>
+
+<!--
+
+HAVE TRIED THE FOLLWINGS TO REFERENCE AN EXTERNAL RESOURCES IN THIS PROFILE BUT DOES NOT WORK. NEED ANOTHER APPROACH. 
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd"
+	profile="dev">
+	
+	<context:property-placeholder location = "classpath:devInfo.properties"/>
+	
+	<bean id="serverInfo" class="com.javalec.profile.ServerInfo">
+		
+		<property name="ip">
+			<value>${local.ip}</value> THE CONSOLE JUST PRINTS ${local.ip}, NOT THE ACTUAL VLUE 
+		</property>
+		 
+		<property name="port">
+			<value>${local.port}</value>
+		</property>
+			 
+	</bean>
+</beans>
+ -->

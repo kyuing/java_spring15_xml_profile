@@ -1,0 +1,6 @@
+Enter 'dev' or 'run'
+run
+INFO : org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationCTX_dev.xml]
+INFO : org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationCTX_run.xml]
+ip: 123.456.789.01
+port: 80
